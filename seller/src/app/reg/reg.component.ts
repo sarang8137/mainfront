@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder,Validators } from '@angular/forms';
 import { DataService } from '../services/data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reg',
@@ -9,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class RegComponent {
 
-  constructor(private fb:FormBuilder,private ds:DataService){
+  constructor(private fb:FormBuilder,private ds:DataService,private r:Router){
   }
 
   regForm=this.fb.group({
@@ -31,7 +32,10 @@ export class RegComponent {
       let pass2=this.regForm.controls.cpassword.value
 
       if(pass1 == pass2){
-        this.ds.signup(email,username,pass1).then(res=>res.json()).then(res=>console.log(res))
+        this.ds.signup(email,username,pass1).then(res=>res.json()).then(res=>{
+          alert("Sign UP Completed!")
+          this.r.navigate([''])
+        }).catch(res=>alert("Sign Up Failed!"))
       }
       else{
         alert("password mismatches")

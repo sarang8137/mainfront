@@ -1,0 +1,21 @@
+<h1 class="text-center bg-primary">
+    PRODUCTS
+</h1>
+<div class="text-right">
+    <a routerLink="/add" class="btn btn-success">Add</a>
+
+</div>
+
+
+<div class="row">
+    <div class="card" style="width: 18rem; margin-bottom: 20px; margin: 20px;" *ngFor="let i of pro">
+        <img src="{{i.product_image}}" height="300px" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{i.product_name}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{i.product_price}}</h6>
+            <p class="card-text">{{i.product_description}}</p>
+            <button id="{{i.id}}" (click)="deletepro($event)" class="btn btn-danger">Remove</button>
+            <button id="{{i.id}}" (click)="editPage($event)" class="ml-2 btn btn-info">Update</button>
+        </div>
+    </div>
+</div>

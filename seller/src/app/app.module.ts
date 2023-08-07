@@ -4,13 +4,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegComponent } from './reg/reg.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+import { AddComponent } from './add/add.component';
+import { EditComponent } from './edit/edit.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegComponent
+    RegComponent,
+    HomeComponent,
+    AddComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,
