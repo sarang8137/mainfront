@@ -28,6 +28,10 @@ export class HomeComponent {
   editPage(e:any){
     this.r.navigate(['edit',e.target.id])
   }
+  logout(){
+    localStorage.clear()
+    this.r.navigate([''])
+  }
 
 
 }
